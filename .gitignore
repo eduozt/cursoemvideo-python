@@ -125,3 +125,4 @@ dmypy.json
 .pyre/
 mundo-01/.DS_Store
 .DS_Store
+.vscode/
