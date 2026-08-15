@@ -126,3 +126,4 @@ dmypy.json
 mundo-01/.DS_Store
 .DS_Store
 .vscode/
+.idea/
