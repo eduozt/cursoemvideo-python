@@ -1,5 +1,3 @@
-nome = input('Digite seu nome completo: ')
+nome = input('Digite seu nome completo: ').strip()
 
-silva = 'silva' in nome.lower()
-
-print('Tem o nome Silva? {}'.format(silva))
+print('Tem o nome Silva? {}'.format('silva' in nome.lower()))

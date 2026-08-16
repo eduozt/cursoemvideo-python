@@ -1,8 +1,6 @@
-cidade = input('Digite o nome de uma cidade: ')
+cidade = input('Digite o nome de uma cidade: ').strip()
 
-cidade = cidade.lower()
-
-dividido = cidade.split()
+dividido = cidade.lower().split()
 
 santo = 'santo' in dividido[0]
 
