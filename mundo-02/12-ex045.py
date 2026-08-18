@@ -1,19 +1,29 @@
 from random import choice
 
 opcoes = ['pedra', 'papel', 'tesoura']
-opmaquina = choice(opcoes)
+computador = choice(opcoes)
 
-resp = input('Pedra, papel ou tesoura? ').lower()
+print('''Suas opções:
+[ 0 ] Pedra
+[ 1 ] Papel
+[ 2 ] Tesoura''')
 
-if resp == opmaquina:
-    resultado = 'Empate'
-elif (resp == 'pedra' and opmaquina == 'tesoura') or (resp == 'papel' and opmaquina == 'pedra') or (resp == 'tesoura' and opmaquina == 'papel'):
-    resultado = 'Você ganhou!'
+jogador = int(input('Qual é a sua jogada? '))
+
+if jogador < 0 or jogador > 2:
+    print('\33[31mOpção inválida! Tente novamente.')
 else:
-    resultado = 'Eu ganhei! Humano fraco!'
+    jogador = opcoes[jogador]
 
-print(f'''Máquina: {opmaquina}
-Usuário: {resp}
-{'-'*50}
-Resultado: {resultado}
-''')
+    if jogador == computador:
+        resultado = 'Empate'
+    elif jogador == 'pedra' and computador == 'tesoura' or jogador == 'papel' and computador == 'pedra' or jogador == 'tesoura' and computador == 'papel':
+        resultado = 'Jogador venceu!'
+    else:
+        resultado = 'Computador venceu!'
+
+    print(f'''Computador jogou {computador.upper()}
+Jogador jogou {jogador.upper()}
+{' RESULTADO ':-^30}
+\33[34m{resultado:^30}\33[m
+{'-'*30}''')
